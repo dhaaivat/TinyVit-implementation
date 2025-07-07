@@ -96,8 +96,8 @@ self.mlp_head = nn.Sequential(
 ## 🛠️ Installation
 
 ```bash
-git clone https://github.com/your-username/tinyvit-cifar10.git
-cd tinyvit-cifar10
+git clone https://github.com/dhaaivat/TinyVit-implementation.git
+cd TinyVit-implementatio
 pip install -r requirements.txt
 ```
 
@@ -147,7 +147,7 @@ This project was designed from scratch with a goal of **fully understanding ViTs
 
 ## 🧠 Author
 
-**Dhaaivat Patil** — AI undergraduate, open-source contributor, and lifelong learner.
+**Dhaaivat Patil** — AI undergraduate.
 
 ---
 
@@ -160,8 +160,8 @@ MIT License
 ## 🙏 Acknowledgements
 
 - Original ViT Paper: [An Image is Worth 16x16 Words](https://arxiv.org/abs/2010.11929)
-- PyTorch
-- CIFAR-10
+- PyTorch 
+- CIFAR-10 https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.CIFAR10.html#torchvision.datasets.CIFAR10
 
 ---
 
