@@ -97,7 +97,7 @@ self.mlp_head = nn.Sequential(
 
 ```bash
 git clone https://github.com/dhaaivat/TinyVit-implementation.git
-cd TinyVit-implementatio
+cd TinyVit-implementation
 pip install -r requirements.txt
 ```
 
