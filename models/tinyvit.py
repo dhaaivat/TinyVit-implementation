@@ -9,14 +9,14 @@ class PatchEmbedding(nn.Module):
 
   def forward(self,x):
     x = self.patches_embedding(x) # gives (B, D , 8 , 8) where D is emb_dim=64 ie (B,64,8,8)
-    x = x.flatten(2).transpose(1,2)
+    x = x.flatten(2).transpose(1,2) #will result in (B,64(dims),64
     return x
-#flatten will flatten last two dimensions and transpose is just gonna "flip" the 2nd and 3rd dimention B,D,N -> B,N,D
-#B,64,8,8 -> B,64,64-> Batch, N, Dimension   N here is the n of patches/seq
-#The reason is simple because the vision transformer expects it in this format, nothing else
-#Now the data is in the form of (Batch, Patches, Dimension)
+#flatten will flatten last two dimensions ie from (8,8) to (64) and transpose is just gonna "flip" the 2nd and 3rd dimention B,D,N -> B,N,D
+#B,64,8,8 -> B,64(dims),64(patch embeddings0-> B,64(patch embeddings),64(dimensions) ie  Batch, N, Dimension   N here is the number  of patches/seq
+#The reason is simple because the vision transformer expects it in this format, nothing else.
+#Now the data is in the form of (Batch, No. of Patches, Dimension) => (B,N,D)
 #So for a particular batch, we have a matrix as (X,Y) where X is patch(es) and Y is the corresponding embedding vector
-#This means that every row consists 64 corresponding values ie patch embeddings.
+#This means that the output of path embedding operation will have every row consisting of  64(our defined dimensions) corresponding values ie patch embeddings.
 
 class ViTEmbedding(nn.Module):
   def __init__(self, num_patches, emb_dim):
@@ -48,7 +48,7 @@ class TransformerEncoderBlock(nn.Module):
     x = x + self.mlp(self.norm2(x))
     return x
 
-#This forward pass is hoesntly nothing difficult/crazy, just programatically written to follow the structure of the Transformer Encoder Block
+#This forward pass is written to follow the structure of the Transformer Encoder Block as mentioned in the original research paper
 
 class TinyViT(nn.Module):
   def __init__(self,image_size=32,patch_size=4,emb_dim=64, depth = 4, heads=4,num_classes=10):
