@@ -1,12 +1,12 @@
 # TinyViT on CIFAR-10
 
-An end-to-end implementation of a **Tiny Vision Transformer (TinyViT)** trained from scratch on the CIFAR-10 dataset. This repository is meant to demystify Vision Transformers by breaking down their components clearly and providing a fully functional training + demo pipeline.
+An end-to-end implementation of a **Tiny Vision Transformer (TinyViT)** trained from scratch on the CIFAR-10 dataset. This repository is meant to demystify Vision Transformers by breaking down their components clearly and providing a fully functional training + demo pipeline ipynb.
 
 ---
 
 ## 🔍 Overview
 
-Vision Transformers (ViTs) apply transformer-based architectures to image data by converting images into sequences of patch embeddings. This project walks through a minimalist ViT architecture with detailed modular design, intuitive explanations, and self-attention visualizations (coming soon).
+Vision Transformers (ViTs) apply transformer-based architectures to image data by converting images into sequences of patch embeddings, then adds positional embeddings ready to be passed into a transformer for self attention. This project walks through a minimalist ViT architecture with detailed modular design, intuitive explanations, and self-attention visualizations (coming soon).
 
 ---
 
@@ -131,7 +131,8 @@ We’ll visualize how the `[CLS]` token attends to each image patch using heatma
 | ----- | --------- | ------- |
 | 10    | \~63.6%   | \~60.4% |
 
-Not state-of-the-art — but the point is **educational clarity**, not leaderboard scores.
+Not state-of-the-art — but the point is **architectural and conceptual clarity**.
+**NOTE:** Transformers are extremely data hungry and would outperform CNN based model for classification **if** trained on extremely large amounts of data.
 
 ---
 
@@ -147,7 +148,7 @@ This project was designed from scratch with a goal of **fully understanding ViTs
 
 ## 🧠 Author
 
-**Dhaaivat Patil** — AI undergraduate.
+**Dhaaivat Patil** .
 
 ---
 
@@ -157,11 +158,10 @@ MIT License
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements:-
 
 - Original ViT Paper: [An Image is Worth 16x16 Words](https://arxiv.org/abs/2010.11929)
-- PyTorch 
-- CIFAR-10 https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.CIFAR10.html#torchvision.datasets.CIFAR10
+- CIFAR-10 [About the dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
 
 ---
 
