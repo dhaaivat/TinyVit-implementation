@@ -148,7 +148,7 @@ This project was designed from scratch with a goal of **fully understanding ViTs
 
 ## 🧠 Author
 
-**Dhaaivat Patil** .
+**Dhaaivat Patil** 
 
 ---
 
